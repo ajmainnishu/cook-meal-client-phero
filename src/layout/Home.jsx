@@ -1,11 +1,13 @@
+import { Outlet } from "react-router-dom";
 import Navigation from "../shared/Navigation/Navigation";
 
 const Home = () => {
     return (
         <div>
-            <Navigation></Navigation>  
+            <Navigation></Navigation>
+            <Outlet></Outlet>
         </div>
     );
 };
 
-export default Home;    <h2>Hello</h2>
+export default Home;

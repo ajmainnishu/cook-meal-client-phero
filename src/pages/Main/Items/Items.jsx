@@ -8,7 +8,7 @@ import itemPhoto6 from '../../../assets/images/items/home_icon_06.png'
 const Items = () => {
     return (
         <div>
-            <div className='flex justify-between items-center w-10/12 mx-auto'>
+            <div className='flex flex-wrap md:justify-between justify-center items-center w-10/12 mx-auto gap-6 md:gap-1'>
                 <div className='flex flex-col items-center text-gray-500'>
                     <img className='' src={itemPhoto1} alt="" />
                     <p className='text-sm pt-2'>HOT DISHES</p>

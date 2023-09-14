@@ -22,7 +22,7 @@ const ChefRecipes = () => {
 
             <div className="w-10/12 mx-auto">
                 <h2 className="mt-20 pb-6 text-center font-semibold text-5xl">Chef Recipes</h2>
-                <div className="grid grid-cols-3 gap-7 my-10">
+                <div className="grid lg:grid-cols-3 grid-cols-1 gap-7 my-10">
                     {
                         cook.map((food, index) => <ChefRecipe key={index} food={food}></ChefRecipe>)
                     }

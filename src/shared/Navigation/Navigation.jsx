@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 import logo from '../../assets/images/logo/cookmeal-logo.png';
 import nav from '../../assets/images/navigation/navigation.jpg';
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navigation = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut();
+    }
     return (
         <div>
             <div className="navbar bg-gray-300 py-3">
@@ -16,7 +22,7 @@ const Navigation = () => {
                             <li className="font-medium"><Link>Blog</Link></li>
                         </ul>
                     </div>
-                    <Link className=""><img style={{height: '60px'}} src={logo} alt="" /></Link>
+                    <Link className=""><img style={{ height: '60px' }} src={logo} alt="" /></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -25,16 +31,19 @@ const Navigation = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="dropdown dropdown-end">
+                    {!user && <div>
+                        <Link to='/login' className="btn btn-neutral">Log In</Link>
+                    </div>}
+                    {user && <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src={nav} />
+                                <img src={user.photoURL ? user.photoURL : nav} />
                             </div>
                         </label>
                         <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            <li><a>Logout</a></li>
+                            <li><button onClick={handleLogOut}>Logout</button></li>
                         </ul>
-                    </div>
+                    </div>}
                 </div>
             </div>
         </div>

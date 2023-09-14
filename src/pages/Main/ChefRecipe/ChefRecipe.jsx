@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import StarRatings from 'react-star-ratings';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ChefRecipe = ({ food }) => {
     const [accepted, setAccepted] = useState(false)
     const { star_rating, cooking_method, food_name, ingredients } = food;
     const btnDisable = () => {
-        setAccepted(true)
+        setAccepted(true);
+        toast.success("The Recipe is your favorite!");
     }
     return (
         <div>
@@ -34,6 +36,7 @@ const ChefRecipe = ({ food }) => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

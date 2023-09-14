@@ -4,7 +4,7 @@ const Blog = () => {
     return (
         <div className="w-6/12 mx-auto my-20">
             <div className="collapse collapse-arrow bg-base-200">
-                <input type="radio" name="my-accordion-2" checked="checked" />
+                <input type="radio" name="my-accordion-2"  />
                 <div className="collapse-title text-xl font-medium">
                     Tell us the differences between uncontrolled and controlled components
                 </div>

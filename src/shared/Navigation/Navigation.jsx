@@ -6,6 +6,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Navigation = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user?.displayName)
     const handleLogOut = () => {
         logOut();
     }
@@ -35,7 +36,7 @@ const Navigation = () => {
                         <Link to='/login' className="btn btn-neutral">Log In</Link>
                     </div>}
                     {user && <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar tooltip tooltip-left" data-tip={user?.displayName}>
                             <div className="w-10 rounded-full">
                                 <img src={user.photoURL ? user.photoURL : nav} />
                             </div>

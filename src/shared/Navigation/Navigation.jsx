@@ -27,7 +27,7 @@ const Navigation = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li className="text-lg font-medium"><Link>Home</Link></li>
-                        <li className="text-lg font-medium"><Link>Blog</Link></li>
+                        <li className="text-lg font-medium"><Link to='/blog'>Blog</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

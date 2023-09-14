@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "../providers/PrivateRoute";
 import EmptyPage from "../pages/EmptyPage/EmptyPage";
+import Blog from "../layout/Blog";
 
 
 const router = createBrowserRouter([
@@ -18,10 +19,6 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Main />
             },
-            // {
-            //     path: '/chef',
-            //     element: <Chefs />
-            // },
             {
                 path: '/chef-recipes/:id',
                 element: <PrivateRoute><ChefRecipes /></PrivateRoute>,
@@ -34,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path:  'blog',
+                element: <Blog />
             },
             {
                 path: '*',

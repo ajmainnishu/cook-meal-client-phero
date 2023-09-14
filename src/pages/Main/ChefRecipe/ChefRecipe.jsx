@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import StarRatings from 'react-star-ratings';
 
 const ChefRecipe = ({ food }) => {
+    const [accepted, setAccepted] = useState(false)
     const { star_rating, cooking_method, food_name, ingredients } = food;
+    const btnDisable = () => {
+        setAccepted(true)
+    }
     return (
         <div>
             <div className="card h-full shadow-xl">
@@ -25,7 +30,7 @@ const ChefRecipe = ({ food }) => {
                     />{star_rating}</div>
                     <p><span className='font-medium'>Cooking Method:</span> {cooking_method}</p>
                     <div className="card-actions mt-5 justify-center">
-                        <button className="btn btn-primary">Favorite</button>
+                        <button onClick={btnDisable} disabled={accepted} className="btn btn-primary text-lg capitalize">Favorite</button>
                     </div>
                 </div>
             </div>

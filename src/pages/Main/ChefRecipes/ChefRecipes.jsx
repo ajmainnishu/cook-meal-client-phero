@@ -14,32 +14,20 @@ const ChefRecipes = () => {
                         <p className="pt-6 font-medium">Years of Experience: {work_experience}</p>
                         <p className="pt-3 font-medium">Numbers of Recipes: {made_recipes}</p>
                         <p className="pt-3 font-medium">Likes: {likes}</p>
-                        <p className="py-3">Description: {bio}</p>
-                        <button className="btn btn-primary mb-10">Get Started</button>
+                        <p className="py-3 mb-10">Description: {bio}</p>
                     </div>
                 </div>
             </div>
 
 
-
-
             <div className="w-10/12 mx-auto">
+                <h2 className="mt-20 pb-6 text-center font-semibold text-5xl">Chef Recipes</h2>
                 <div className="grid grid-cols-3 gap-7 my-10">
-
                     {
                         cook.map((food, index) => <ChefRecipe key={index} food={food}></ChefRecipe>)
                     }
-
                 </div>
             </div>
-
-
-
-
-
-
-
-
         </div>
     );
 };

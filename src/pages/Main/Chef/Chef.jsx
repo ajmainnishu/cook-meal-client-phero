@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
+import LazyLoad from 'react-lazyload';
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Chef = ({ chef }) => {
     const { chef_name, chef_picture, likes, made_recipes, work_experience, id } = chef;
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl">
-                <figure><img className="lg:w-40 lg:h-60" src={chef_picture} alt="chef picture" /></figure>
+                <figure>
+                    <LazyLoadImage effect="blur" className="lg:w-40 lg:h-60" src={chef_picture} alt="chef picture" />
+                </figure>
                 <div className="card-body">
                     <h2 className="card-title">{chef_name}</h2>
                     <hr />

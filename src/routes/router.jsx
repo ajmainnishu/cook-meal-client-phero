@@ -6,6 +6,7 @@ import ChefRecipes from "../pages/Main/ChefRecipes/ChefRecipes";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "../providers/PrivateRoute";
+import EmptyPage from "../pages/EmptyPage/EmptyPage";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path: '*',
+                element: <EmptyPage></EmptyPage>
             }
         ]
     }

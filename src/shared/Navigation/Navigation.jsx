@@ -28,6 +28,7 @@ const Navigation = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li className="text-lg font-medium"><Link>Home</Link></li>
                         <li className="text-lg font-medium"><Link to='/blog'>Blog</Link></li>
+                        {user && <li className="text-lg font-medium"><Link to='/favorites'>Favorites</Link></li>}
                     </ul>
                 </div>
                 <div className="navbar-end">

@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "../providers/PrivateRoute";
 import EmptyPage from "../pages/EmptyPage/EmptyPage";
 import Blog from "../layout/Blog";
+import Favorites from "../pages/Main/Favorites/Favorites";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path:  'blog',
                 element: <Blog />
+            },
+            {
+                path: 'favorites',
+                element: <Favorites />
             },
             {
                 path: '*',

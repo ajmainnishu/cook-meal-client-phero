@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import StarRatings from 'react-star-ratings';
 import { ToastContainer, toast } from 'react-toastify';
+import { addLocalStorage } from '../../../utilities/LocalDB';
 
 const ChefRecipe = ({ food }) => {
     const [accepted, setAccepted] = useState(false)
-    const { star_rating, cooking_method, food_name, ingredients } = food;
-    const btnDisable = () => {
+    const { code, star_rating, cooking_method, food_name, ingredients } = food;
+    const btnDisable = (code) => {
+        addLocalStorage(code);
         setAccepted(true);
         toast.success("The Recipe is your favorite!");
     }
@@ -32,7 +34,7 @@ const ChefRecipe = ({ food }) => {
                     />{star_rating}</div>
                     <p><span className='font-medium'>Cooking Method:</span> {cooking_method}</p>
                     <div className="card-actions mt-5 justify-center">
-                        <button onClick={btnDisable} disabled={accepted} className="btn btn-primary text-lg capitalize">Favorite</button>
+                        <button onClick={() => btnDisable(code)} disabled={accepted} className="btn btn-primary text-lg capitalize">Favorite</button>
                     </div>
                 </div>
             </div>
